@@ -3,3 +3,5 @@ Checking format, CRC and allow to access some information stored in the IDs.
 
 Java библиотека для работы с Казахстанскими ИИН и БИН.
 Выполняется проверка формата, проверка контрольной суммы, а так же получение данных зашифрованных в ИИН и БИН.
+
+Current build status: [![Build Status](https://travis-ci.org/valery1707/kaz-person-id.svg)](https://travis-ci.org/valery1707/kaz-person-id)
