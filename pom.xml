@@ -24,12 +24,21 @@
 
 	<scm>
 		<url>https://github.com/valery1707/kaz-person-id</url>
+		<connection>scm:git:https://github.com/valery1707/kaz-person-id</connection>
 		<developerConnection>scm:git|git@github.com:valery1707/kaz-person-id.git</developerConnection>
 	</scm>
 	<issueManagement>
 		<system>GitHub</system>
 		<url>https://github.com/valery1707/kaz-person-id</url>
 	</issueManagement>
+
+	<developers>
+		<developer>
+			<name>Valeriy Vyrva</name>
+			<email>valery1707@gmail.com</email>
+			<timezone>+6</timezone>
+		</developer>
+	</developers>
 
 	<properties>
 		<project.encoding>UTF-8</project.encoding>
@@ -61,6 +70,17 @@
 		</dependency>
 	</dependencies>
 
+	<distributionManagement>
+		<snapshotRepository>
+			<id>ossrh</id>
+			<url>https://oss.sonatype.org/content/repositories/snapshots</url>
+		</snapshotRepository>
+		<repository>
+			<id>ossrh</id>
+			<url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+		</repository>
+	</distributionManagement>
+
 	<build>
 		<plugins>
 			<plugin>
@@ -83,4 +103,56 @@
 			</plugin>
 		</plugins>
 	</build>
+
+	<profiles>
+		<profile>
+			<!--http://central.sonatype.org/pages/apache-maven.html-->
+			<id>release</id>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-source-plugin</artifactId>
+						<version>2.2.1</version>
+						<executions>
+							<execution>
+								<id>attach-sources</id>
+								<goals>
+									<goal>jar-no-fork</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-javadoc-plugin</artifactId>
+						<version>2.9.1</version>
+						<executions>
+							<execution>
+								<id>attach-javadocs</id>
+								<goals>
+									<goal>jar</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
+
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-gpg-plugin</artifactId>
+						<version>1.5</version>
+						<executions>
+							<execution>
+								<id>sign-artifacts</id>
+								<phase>verify</phase>
+								<goals>
+									<goal>sign</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+	</profiles>
 </project>

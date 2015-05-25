@@ -3,14 +3,16 @@ package name.valery1707.kazPersonId;
 public enum JuridicalPersonType {
 	/**
 	 * Juridical person resident
-	 * <p/>
+	 * <p>
 	 * Юридическое лицо резидент
+	 * </p>
 	 */
 	RESIDENT,
 	/**
 	 * Juridical person non-resident
-	 * <p/>
+	 * <p>
 	 * Юридическое лице не резидент
+	 * </p>
 	 */
 	NON_RESIDENT,
 	/**
