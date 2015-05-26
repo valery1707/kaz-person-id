@@ -113,6 +113,18 @@ public final class PersonIdUtils {
 		return null;
 	}
 
+	public static final Pattern DATE_PATTERN = Pattern.compile(
+			"^" +
+			"\\d{2}" +                        //Year: any
+			"(0[1-9]|1[0-2])" +               //Month: 01-12
+			"(0[1-9]|[1-2][0-9]|3[0-1])" +    //Day: 01-31
+			"$"
+	);
+
+	private static boolean isDate(String s) {
+		return DATE_PATTERN.matcher(s).matches();
+	}
+
 	private static final String BIRTH_DATE_FORMAT = "yyMMdd";
 	private static final Calendar[] YEAR_PREFIXES = new Calendar[]{
 			//Unassigned: 0
@@ -133,7 +145,11 @@ public final class PersonIdUtils {
 	};
 
 	public static Date detectBirthDate(String id) {
-		if (id == null || id.length() <= SEX_AND_CENTURY_POS || !isDigits(id.substring(0, SEX_AND_CENTURY_POS))) {
+		if (id == null || id.length() <= SEX_AND_CENTURY_POS) {
+			return null;
+		}
+		String date = id.substring(0, SEX_AND_CENTURY_POS);
+		if (!isDigits(date) || !isDate(date)) {
 			return null;
 		}
 		SimpleDateFormat dateFormat = new SimpleDateFormat(BIRTH_DATE_FORMAT);
@@ -143,7 +159,7 @@ public final class PersonIdUtils {
 			dateFormat.set2DigitYearStart(yearPrefix.getTime());
 		}
 		try {
-			return new Date(dateFormat.parse(id.substring(0, SEX_AND_CENTURY_POS)).getTime());
+			return new Date(dateFormat.parse(date).getTime());
 		} catch (ParseException e) {
 			//todo Throw exception?
 			return null;

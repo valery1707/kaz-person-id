@@ -18,6 +18,7 @@ public class PersonIdUtilsTest {
 		assertThat(PersonIdUtils.detectSex(null)).isNull();
 		assertThat(PersonIdUtils.detectSex("")).isNull();
 		assertThat(PersonIdUtils.detectSex("830717")).isNull();
+		assertThat(PersonIdUtils.detectSex("8307170")).isNull();
 	}
 
 	@Test
@@ -27,6 +28,9 @@ public class PersonIdUtilsTest {
 		assertThat(PersonIdUtils.detectBirthDate("83071")).isNull();
 		assertThat(PersonIdUtils.detectBirthDate("830717")).isNull();
 		assertThat(PersonIdUtils.detectBirthDate("8307173").toString()).isEqualTo("1983-07-17");
+		assertThat(PersonIdUtils.detectBirthDate("ABCDEF3")).isNull();
+		assertThat(PersonIdUtils.detectBirthDate("8307170").toString()).isEqualTo("1983-07-17");
+		assertThat(PersonIdUtils.detectBirthDate("9999990")).isNull();
 	}
 
 	@Test
@@ -36,6 +40,7 @@ public class PersonIdUtilsTest {
 		assertThat(PersonIdUtils.detectRegistrationDate("95")).isNull();
 		assertThat(PersonIdUtils.detectRegistrationDate("950")).isNull();
 		assertThat(PersonIdUtils.detectRegistrationDate("9503").toString()).isEqualTo("1995-03-01");
+		assertThat(PersonIdUtils.detectRegistrationDate("ABCD")).isNull();
 	}
 
 	@Test
@@ -44,6 +49,11 @@ public class PersonIdUtilsTest {
 		assertThat(PersonIdUtils.detectJuridicalPersonType("")).isNull();
 		assertThat(PersonIdUtils.detectJuridicalPersonType("9503")).isNull();
 		assertThat(PersonIdUtils.detectJuridicalPersonType("95034")).isSameAs(JuridicalPersonType.RESIDENT);
+		String prefix = "9503";
+		for (JuridicalPersonType type : JuridicalPersonType.values()) {
+			assertThat(PersonIdUtils.detectJuridicalPersonType(prefix + Character.forDigit(type.ordinal() + 4, 10))).isSameAs(type);
+		}
+		assertThat(PersonIdUtils.detectJuridicalPersonType("95030")).isNull();
 	}
 
 	@Test
@@ -53,5 +63,9 @@ public class PersonIdUtilsTest {
 		assertThat(PersonIdUtils.detectJuridicalPersonAttribute("9503")).isNull();
 		assertThat(PersonIdUtils.detectJuridicalPersonAttribute("95034")).isNull();
 		assertThat(PersonIdUtils.detectJuridicalPersonAttribute("950341")).isSameAs(JuridicalPersonAttribute.AFFILIATED_BRANCH);
+		String prefix = "95034";
+		for (JuridicalPersonAttribute attribute : JuridicalPersonAttribute.values()) {
+			assertThat(PersonIdUtils.detectJuridicalPersonAttribute(prefix + Character.forDigit(attribute.ordinal(), 10))).isSameAs(attribute);
+		}
 	}
 }
