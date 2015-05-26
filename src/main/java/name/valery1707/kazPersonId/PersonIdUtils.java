@@ -8,7 +8,8 @@ import java.util.GregorianCalendar;
 import java.util.regex.Pattern;
 
 public final class PersonIdUtils {
-	private PersonIdUtils() {
+	protected PersonIdUtils() {
+		throw new IllegalStateException("Utils can not be created");
 	}
 
 	private static final int ID_LENGTH = 12;

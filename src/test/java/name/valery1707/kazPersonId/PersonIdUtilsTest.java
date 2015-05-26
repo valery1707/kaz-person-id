@@ -6,6 +6,11 @@ import static com.google.common.truth.Truth.assertThat;
 
 public class PersonIdUtilsTest {
 
+	@Test(expected = IllegalStateException.class)
+	public void testUtilsCreation() throws Exception {
+		new PersonIdUtils();
+	}
+
 	@Test
 	public void testIsValidCRC() throws Exception {
 		assertThat(PersonIdUtils.isValidCRC(null)).isFalse();
