@@ -154,6 +154,7 @@ public final class PersonIdUtils {
 			return null;
 		}
 		SimpleDateFormat dateFormat = new SimpleDateFormat(BIRTH_DATE_FORMAT);
+		dateFormat.setLenient(false);
 		int yearPrefixIndex = charAsDigit(id.charAt(SEX_AND_CENTURY_POS));
 		Calendar yearPrefix = YEAR_PREFIXES[(yearPrefixIndex)];
 		if (yearPrefix != null) {
@@ -175,6 +176,7 @@ public final class PersonIdUtils {
 			return null;
 		}
 		SimpleDateFormat dateFormat = new SimpleDateFormat(REGISTRATION_DATE_FORMAT);
+		dateFormat.setLenient(false);
 		try {
 			return new Date(dateFormat.parse(id.substring(0, REGISTRATION_DATE_LENGTH)).getTime());
 		} catch (ParseException e) {

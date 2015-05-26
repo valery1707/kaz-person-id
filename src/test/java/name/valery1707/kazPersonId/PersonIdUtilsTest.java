@@ -36,6 +36,7 @@ public class PersonIdUtilsTest {
 		assertThat(PersonIdUtils.detectBirthDate("ABCDEF3")).isNull();
 		assertThat(PersonIdUtils.detectBirthDate("8307170").toString()).isEqualTo("1983-07-17");
 		assertThat(PersonIdUtils.detectBirthDate("9999990")).isNull();
+		assertThat(PersonIdUtils.detectBirthDate("0002310")).isNull();
 	}
 
 	@Test
@@ -46,6 +47,7 @@ public class PersonIdUtilsTest {
 		assertThat(PersonIdUtils.detectRegistrationDate("950")).isNull();
 		assertThat(PersonIdUtils.detectRegistrationDate("9503").toString()).isEqualTo("1995-03-01");
 		assertThat(PersonIdUtils.detectRegistrationDate("ABCD")).isNull();
+		assertThat(PersonIdUtils.detectRegistrationDate("9999")).isNull();
 	}
 
 	@Test
