@@ -71,11 +71,10 @@ public final class PersonIdUtils {
 	private static final int CRC_MODE = 11;
 	private static final int CRC_INCORRECT = 10;
 
-	public static boolean isValidCRC(String id) {
-		if (id == null || id.length() != ID_LENGTH || !isDigits(id)) {
-			return false;
+	public static int calculateCRC(String id) {
+		if (id == null || id.length() < CRC_WEIGHTS[0].length || !isDigits(id)) {
+			return -1;
 		}
-		int testCrc = charAsDigit(id.charAt(ID_LENGTH - 1));
 		int crc = CRC_INCORRECT;
 		int weightPos = 0;
 		while (crc == CRC_INCORRECT && weightPos < CRC_WEIGHTS.length) {
@@ -86,6 +85,15 @@ public final class PersonIdUtils {
 			crc = crc % CRC_MODE;
 			weightPos++;
 		}
+		return crc;
+	}
+
+	public static boolean isValidCRC(String id) {
+		if (id == null || id.length() != ID_LENGTH || !isDigits(id)) {
+			return false;
+		}
+		int testCrc = charAsDigit(id.charAt(ID_LENGTH - 1));
+		int crc = calculateCRC(id);
 		return crc == testCrc;
 	}
 

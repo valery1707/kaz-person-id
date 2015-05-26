@@ -19,6 +19,26 @@ public class PersonIdUtilsTest {
 	}
 
 	@Test
+	public void testCalculateCRC() throws Exception {
+		assertThat(PersonIdUtils.calculateCRC(null)).isLessThan(0);
+		assertThat(PersonIdUtils.calculateCRC("")).isLessThan(0);
+		assertThat(PersonIdUtils.calculateCRC("0123456789AB")).isLessThan(0);
+	}
+
+	/**
+	 * Testing case than after first pass CRC == 10 AND after second pass CRC still equals 10
+	 *
+	 * @throws Exception
+	 */
+	@Test
+	public void testIncorrectCrcInSecondPass() throws Exception {
+		assertThat(PersonIdUtils.isValidCRC("000813159890")).isFalse();
+		assertThat(PersonIdUtils.calculateCRC("000813159890")).isEqualTo(10);
+		assertThat(PersonIdUtils.isValidCRC("83071710098")).isFalse();
+		assertThat(PersonIdUtils.calculateCRC("83071710098")).isEqualTo(10);
+	}
+
+	@Test
 	public void testDetectSex() throws Exception {
 		assertThat(PersonIdUtils.detectSex(null)).isNull();
 		assertThat(PersonIdUtils.detectSex("")).isNull();
@@ -73,6 +93,25 @@ public class PersonIdUtilsTest {
 		String prefix = "95034";
 		for (JuridicalPersonAttribute attribute : JuridicalPersonAttribute.values()) {
 			assertThat(PersonIdUtils.detectJuridicalPersonAttribute(prefix + Character.forDigit(attribute.ordinal(), 10))).isSameAs(attribute);
+		}
+	}
+
+	public static void main(String[] args) {
+		//Search for IDs with "incorrect" CRC after all pass of calculation CRC algorithm
+		for (int year = 0; year <= 99; year++) {
+			for (int month = 1; month <= 12; month++) {
+				for (int day = 1; day <= 31; day++) {
+					for (int sex = 1; sex <= 6; sex++) {
+						for (int number = 0; number <= 9999; number++) {
+							String id = String.format("%02d%02d%02d%d%04d", year, month, day, sex, number);
+							int crc = PersonIdUtils.calculateCRC(id);
+							if (crc > 9) {
+								System.out.println(id);
+							}
+						}
+					}
+				}
+			}
 		}
 	}
 }
