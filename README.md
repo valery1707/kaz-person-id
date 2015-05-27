@@ -3,6 +3,7 @@ kaz-person-id
 
 [![Build Status](https://travis-ci.org/valery1707/kaz-person-id.svg)](https://travis-ci.org/valery1707/kaz-person-id)
 [![Coverage Status](https://coveralls.io/repos/valery1707/kaz-person-id/badge.svg)](https://coveralls.io/r/valery1707/kaz-person-id)
+[![Maven Central](https://img.shields.io/maven-central/v/name.valery1707.kaz-person-id/kaz-person-id.svg)](https://maven-badges.herokuapp.com/maven-central/name.valery1707.kaz-person-id/kaz-person-id/)
 
 ### English description
 
