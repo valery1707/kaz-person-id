@@ -9,10 +9,10 @@ kaz-person-id
 
 ### English description
 
-Java library for test and use Person ID (Private and Juridical) which is used in Kazakhstan.
-Checking format, CRC and allow to access some information stored in the IDs.
+Java library for test and use Person ID ([Private](http://egov.kz/wps/portal/Content?contentPath=/egovcontent/passport_id_card/article/iin_info&lang=en) and [Juridical](http://egov.kz/wps/portal/Content?contentPath=/egovcontent/bus_business/for_businessmen/article/business_identification_number&lang=en)) which is used in Kazakhstan.
+Checking format, [CRC](http://adilet.zan.kz/rus/docs/P070000406_#z9) and allow to access some information stored in the IDs.
 
 ### Описание на русском
 
-Java библиотека для работы с Казахстанскими ИИН и БИН.
-Выполняется проверка формата, проверка контрольной суммы, а так же получение данных зашифрованных в ИИН и БИН.
+Java библиотека для работы с Казахстанскими [ИИН](http://egov.kz/wps/portal/Content?contentPath=/egovcontent/passport_id_card/article/iin_info&lang=ru) и [БИН](http://egov.kz/wps/portal/Content?contentPath=/egovcontent/bus_business/for_businessmen/article/business_identification_number&lang=ru).
+Выполняется проверка формата, проверка [контрольной суммы](http://adilet.zan.kz/rus/docs/P070000406_#z9), а так же получение данных зашифрованных в ИИН и БИН.
