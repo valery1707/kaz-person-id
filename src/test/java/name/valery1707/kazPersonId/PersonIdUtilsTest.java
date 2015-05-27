@@ -25,6 +25,31 @@ public class PersonIdUtilsTest {
 		assertThat(PersonIdUtils.calculateCRC("0123456789AB")).isLessThan(0);
 	}
 
+	@Test
+	public void testImportanceOf_11_Sign() throws Exception {
+		//For ID's which can calculate CRC in first pass: 11-n sign does not important because it weight aliquot 11 and does not change final CRC value
+
+		//For ID's which can calculate CRC only in second pass: all signs important
+		testImportanceOfSign("830717350867", 11);
+	}
+
+	private void testImportanceOfSign(String id, int testSignIndex) {
+		int testSign = Character.digit(id.charAt(testSignIndex - 1), 10);
+		int testCrc = Character.digit(id.charAt(id.length() - 1), 10);
+		String testIdPrefix = id.substring(0, testSignIndex - 1);
+		String testIdSuffix = id.substring(testSignIndex);
+		assertThat(PersonIdUtils.calculateCRC(id)).isEqualTo(testCrc);
+		for (int sign = 0; sign <= 9; sign++) {
+			if (sign == testSign) {
+				continue;
+			}
+			String testId = testIdPrefix + Character.forDigit(sign, 10) + testIdSuffix;
+			assertThat(PersonIdUtils.calculateCRC(testId))
+					.named("id[" + testSignIndex + "](" + testSign + "=>" + sign + ")")
+					.isNotEqualTo(testCrc);
+		}
+	}
+
 	/**
 	 * Testing case than after first pass CRC == 10 AND after second pass CRC still equals 10
 	 *
