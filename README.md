@@ -4,7 +4,6 @@ kaz-person-id
 [![Build Status](https://travis-ci.org/valery1707/kaz-person-id.svg)](https://travis-ci.org/valery1707/kaz-person-id)
 [![Coverage Status](https://coveralls.io/repos/valery1707/kaz-person-id/badge.svg)](https://coveralls.io/r/valery1707/kaz-person-id)
 [![Coverity Scan](https://img.shields.io/coverity/scan/5335.svg)](https://scan.coverity.com/projects/5335)
-
 [![Dependency Status](https://www.versioneye.com/user/projects/5565549563613000188a0900/badge.svg?style=flat)](https://www.versioneye.com/user/projects/5565549563613000188a0900)
 
 [![Maven Central](https://img.shields.io/maven-central/v/name.valery1707.kaz-person-id/kaz-person-id.svg)](https://maven-badges.herokuapp.com/maven-central/name.valery1707.kaz-person-id/kaz-person-id/)
