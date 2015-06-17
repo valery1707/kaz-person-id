@@ -33,4 +33,19 @@ public class PrivatePersonIdTest {
 		assertThat(id.getBirthDate().toString()).isEqualTo("1968-05-03");
 		assertThat(id.getSex()).isSameAs(Sex.FEMALE);
 	}
+
+	@Test
+	public void testCenturyBit() throws Exception {
+		PrivatePersonId id;
+
+		id = new PrivatePersonId("800416100254");
+		assertThat(id.isValid()).isTrue();
+		assertThat(id.getBirthDate().toString()).isEqualTo("1880-04-16");
+		assertThat(id.getSex()).isSameAs(Sex.MALE);
+
+		id = new PrivatePersonId("680503250034");
+		assertThat(id.isValid()).isTrue();
+		assertThat(id.getBirthDate().toString()).isEqualTo("1868-05-03");
+		assertThat(id.getSex()).isSameAs(Sex.FEMALE);
+	}
 }
