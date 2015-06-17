@@ -2,6 +2,10 @@
 
 `mvn clean test jacoco:report`
 
+### [PITest](http://pitest.org/) mutation testing
+
+`mvn clean test org.pitest:pitest-maven:mutationCoverage`
+
 ### Deploy to Maven Central
 
 1. Commit and deploy artifact to Sonatype OSSRH
