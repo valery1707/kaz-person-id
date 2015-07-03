@@ -2,7 +2,7 @@ package name.valery1707.kazPersonId;
 
 import org.junit.Test;
 
-import static com.google.common.truth.Truth.assertThat;
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class PersonIdUtilsTest {
 
@@ -45,7 +45,7 @@ public class PersonIdUtilsTest {
 			}
 			String testId = testIdPrefix + Character.forDigit(sign, 10) + testIdSuffix;
 			assertThat(PersonIdUtils.calculateCRC(testId))
-					.named("id[" + testSignIndex + "](" + testSign + "=>" + sign + ")")
+					.describedAs("id[%d](%d=>%d)", testSignIndex, testSign, sign)
 					.isNotEqualTo(testCrc);
 		}
 	}

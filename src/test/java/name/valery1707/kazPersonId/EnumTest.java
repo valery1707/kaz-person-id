@@ -2,7 +2,7 @@ package name.valery1707.kazPersonId;
 
 import org.junit.Test;
 
-import static com.google.common.truth.Truth.assertThat;
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class EnumTest {
 

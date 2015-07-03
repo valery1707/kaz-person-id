@@ -5,7 +5,7 @@ import org.junit.Test;
 import java.sql.Date;
 import java.util.Calendar;
 
-import static com.google.common.truth.Truth.assertThat;
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class JuridicalPersonIdTest {
 

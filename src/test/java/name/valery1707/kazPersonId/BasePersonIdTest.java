@@ -5,7 +5,7 @@ import org.junit.Test;
 import java.util.HashSet;
 import java.util.Set;
 
-import static com.google.common.truth.Truth.assertThat;
+import static org.assertj.core.api.Assertions.assertThat;
 
 public class BasePersonIdTest {
 
@@ -79,6 +79,6 @@ public class BasePersonIdTest {
 		ids.add(id2());
 		ids.add(idNull());
 		assertThat(ids).hasSize(3);
-		assertThat(ids).containsExactly(id1(), id2(), idNull());
+		assertThat(ids).containsOnly(id1(), id2(), idNull());
 	}
 }
