@@ -46,6 +46,8 @@
 		<maven.compiler.source>1.6</maven.compiler.source>
 		<maven.compiler.target>1.6</maven.compiler.target>
 		<maven.build.timestamp.format>yyyy-MM-dd HH:mm</maven.build.timestamp.format>
+
+		<lib.assertj.version>3.1.0</lib.assertj.version>
 	</properties>
 
 	<dependencies>
@@ -65,7 +67,7 @@
 		<dependency>
 			<groupId>org.assertj</groupId>
 			<artifactId>assertj-core</artifactId>
-			<version>1.7.1</version>
+			<version>${lib.assertj.version}</version>
 			<scope>test</scope>
 		</dependency>
 	</dependencies>
@@ -167,5 +169,36 @@
 				</plugins>
 			</build>
 		</profile>
+
+		<profile>
+			<id>lib-jdk-6</id>
+			<activation>
+				<jdk>1.6</jdk>
+			</activation>
+			<properties>
+				<lib.assertj.version>1.7.1</lib.assertj.version>
+			</properties>
+		</profile>
+
+		<profile>
+			<id>lib-jdk-7</id>
+			<activation>
+				<jdk>1.7</jdk>
+			</activation>
+			<properties>
+				<lib.assertj.version>2.1.0</lib.assertj.version>
+			</properties>
+		</profile>
+
+		<profile>
+			<id>lib-jdk-8</id>
+			<activation>
+				<jdk>1.8</jdk>
+			</activation>
+			<properties>
+				<lib.assertj.version>3.1.0</lib.assertj.version>
+			</properties>
+		</profile>
+
 	</profiles>
 </project>
