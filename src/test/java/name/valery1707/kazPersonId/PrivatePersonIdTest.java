@@ -48,4 +48,29 @@ public class PrivatePersonIdTest {
 		assertThat(id.getBirthDate().toString()).isEqualTo("1868-05-03");
 		assertThat(id.getSex()).isSameAs(Sex.FEMALE);
 	}
+
+	@Test
+	public void testTextInId() throws Exception {
+		PrivatePersonId id;
+
+		id = new PrivatePersonId("------------");
+		assertThat(id.isValid()).isFalse();
+		assertThat(id.getBirthDate()).isNull();
+		assertThat(id.getSex()).isNull();
+
+		id = new PrivatePersonId("            ");
+		assertThat(id.isValid()).isFalse();
+		assertThat(id.getBirthDate()).isNull();
+		assertThat(id.getSex()).isNull();
+
+		id = new PrivatePersonId("abcdefghijkl");
+		assertThat(id.isValid()).isFalse();
+		assertThat(id.getBirthDate()).isNull();
+		assertThat(id.getSex()).isNull();
+
+		id = new PrivatePersonId("абвгдеёжзикл");
+		assertThat(id.isValid()).isFalse();
+		assertThat(id.getBirthDate()).isNull();
+		assertThat(id.getSex()).isNull();
+	}
 }
