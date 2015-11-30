@@ -48,7 +48,7 @@
 		<maven.build.timestamp.format>yyyy-MM-dd HH:mm</maven.build.timestamp.format>
 
 		<lib.assertj.version>3.2.0</lib.assertj.version>
-		<lib.coveralls.version>4.0.0</lib.coveralls.version>
+		<lib.coveralls.version>4.1.0</lib.coveralls.version>
 	</properties>
 
 	<dependencies>
@@ -179,7 +179,7 @@
 			</activation>
 			<properties>
 				<lib.assertj.version>1.7.1</lib.assertj.version>
-				<lib.coveralls.version>3.2.0</lib.coveralls.version>
+				<lib.coveralls.version>3.2.1</lib.coveralls.version>
 			</properties>
 		</profile>
 
