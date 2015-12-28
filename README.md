@@ -7,6 +7,7 @@ kaz-person-id
 [![Dependency Status](https://www.versioneye.com/user/projects/5565549563613000188a0900/badge.svg?style=flat)](https://www.versioneye.com/user/projects/5565549563613000188a0900)
 
 [![Maven Central](https://img.shields.io/maven-central/v/name.valery1707.kaz-person-id/kaz-person-id.svg)](https://maven-badges.herokuapp.com/maven-central/name.valery1707.kaz-person-id/kaz-person-id/)
+[![Javadoc](http://javadocbadge-valery1707.rhcloud.com/doc/name.valery1707.kaz-person-id/kaz-person-id/badge.svg)](http://www.javadoc.io/doc/name.valery1707.kaz-person-id/kaz-person-id)
 [![License](https://img.shields.io/github/license/valery1707/kaz-person-id.svg)](http://opensource.org/licenses/MIT)
 
 ### English description
