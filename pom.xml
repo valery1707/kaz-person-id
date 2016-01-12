@@ -47,7 +47,7 @@
 		<maven.compiler.target>1.6</maven.compiler.target>
 		<maven.build.timestamp.format>yyyy-MM-dd HH:mm</maven.build.timestamp.format>
 
-		<lib.assertj.version>3.2.0</lib.assertj.version>
+		<lib.assertj.version>3.3.0</lib.assertj.version>
 		<lib.coveralls.version>4.1.0</lib.coveralls.version>
 	</properties>
 
@@ -189,7 +189,7 @@
 				<jdk>1.7</jdk>
 			</activation>
 			<properties>
-				<lib.assertj.version>2.2.0</lib.assertj.version>
+				<lib.assertj.version>2.3.0</lib.assertj.version>
 			</properties>
 		</profile>
 
@@ -199,7 +199,7 @@
 				<jdk>1.8</jdk>
 			</activation>
 			<properties>
-				<lib.assertj.version>3.2.0</lib.assertj.version>
+				<lib.assertj.version>3.3.0</lib.assertj.version>
 			</properties>
 		</profile>
 
