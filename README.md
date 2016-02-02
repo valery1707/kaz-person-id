@@ -4,6 +4,7 @@ kaz-person-id
 [![Build Status](https://travis-ci.org/valery1707/kaz-person-id.svg)](https://travis-ci.org/valery1707/kaz-person-id)
 [![Build status](https://ci.appveyor.com/api/projects/status/dcoxl79p6i2vjib7/branch/master?svg=true)](https://ci.appveyor.com/project/valery1707/kaz-person-id/branch/master)
 [![Build status](https://codeship.com/projects/a04b13c0-aba0-0133-0570-0a03f2ff8f6f/status?branch=master)](https://codeship.com/projects/131398)
+[![Build status](https://circleci.com/gh/valery1707/kaz-person-id.svg?style=svg)](https://circleci.com/gh/valery1707/kaz-person-id)
 
 [![Coverage Status](https://coveralls.io/repos/valery1707/kaz-person-id/badge.svg)](https://coveralls.io/r/valery1707/kaz-person-id)
 [![codecov.io](https://codecov.io/github/valery1707/kaz-person-id/coverage.svg?branch=master)](https://codecov.io/github/valery1707/kaz-person-id)
