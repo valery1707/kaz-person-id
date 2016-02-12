@@ -15,6 +15,7 @@ kaz-person-id
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/name.valery1707.kaz-person-id/kaz-person-id/badge.svg)](https://maven-badges.herokuapp.com/maven-central/name.valery1707.kaz-person-id/kaz-person-id)
 [![Javadoc](https://javadoc-emblem.rhcloud.com/doc/name.valery1707.kaz-person-id/kaz-person-id/badge.svg)](http://www.javadoc.io/doc/name.valery1707.kaz-person-id/kaz-person-id)
 [![License](https://img.shields.io/github/license/valery1707/kaz-person-id.svg)](http://opensource.org/licenses/MIT)
+[![OpenHUB](https://www.openhub.net/p/kaz-person-id/widgets/project_thin_badge.gif)](https://www.openhub.net/p/kaz-person-id)
 
 ### English description
 
