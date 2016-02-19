@@ -6,6 +6,7 @@ kaz-person-id
 [![Build status](https://codeship.com/projects/a04b13c0-aba0-0133-0570-0a03f2ff8f6f/status?branch=master)](https://codeship.com/projects/131398)
 [![Build status](https://circleci.com/gh/valery1707/kaz-person-id.svg?style=svg)](https://circleci.com/gh/valery1707/kaz-person-id)
 [![Build Status](https://drone.io/github.com/valery1707/kaz-person-id/status.png)](https://drone.io/github.com/valery1707/kaz-person-id/latest)
+[![Build status](https://app.wercker.com/status/71759fb870e88774218bf0c4df4a801e/s/master)](https://app.wercker.com/project/bykey/71759fb870e88774218bf0c4df4a801e)
 
 [![Coverage Status](https://coveralls.io/repos/valery1707/kaz-person-id/badge.svg)](https://coveralls.io/r/valery1707/kaz-person-id)
 [![codecov.io](https://codecov.io/github/valery1707/kaz-person-id/coverage.svg?branch=master)](https://codecov.io/github/valery1707/kaz-person-id)

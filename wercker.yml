@@ -1,0 +1,6 @@
+box: maven:3-jdk-7
+
+build:
+  steps:
+    - xenoterracide/maven:
+      goals: package
