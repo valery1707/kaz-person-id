@@ -126,8 +126,8 @@
 				<artifactId>versioneye-maven-plugin</artifactId>
 				<version>3.9.1</version>
 				<configuration>
-					<projectId>${versioneye.api_key}</projectId>
-					<apiKey>${versioneye.projectid}</apiKey>
+					<projectId>${versioneye.projectid}</projectId>
+					<apiKey>${versioneye.api_key}</apiKey>
 				</configuration>
 			</plugin>
 		</plugins>
