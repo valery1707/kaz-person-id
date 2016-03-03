@@ -12,6 +12,7 @@ before_install:
 after_success:
   - mvn clean test jacoco:report coveralls:report
   - codecov
+  - mvn -Dversioneye.projectid=${VERSION_EYE__PROJECT_ID} -Dversioneye.api_key=${VERSION_EYE__API_KEY} versioneye:update
 
 env:
   global:

@@ -49,6 +49,9 @@
 
 		<lib.assertj.version>3.3.0</lib.assertj.version>
 		<lib.coveralls.version>4.1.0</lib.coveralls.version>
+
+		<versioneye.api_key>SECURE</versioneye.api_key>
+		<versioneye.projectid>VALUE</versioneye.projectid>
 	</properties>
 
 	<dependencies>
@@ -116,6 +119,15 @@
 					<targetTests>
 						<param>name.valery1707.kazPersonId*</param>
 					</targetTests>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>com.versioneye</groupId>
+				<artifactId>versioneye-maven-plugin</artifactId>
+				<version>3.9.1</version>
+				<configuration>
+					<projectId>${versioneye.api_key}</projectId>
+					<apiKey>${versioneye.projectid}</apiKey>
 				</configuration>
 			</plugin>
 		</plugins>
