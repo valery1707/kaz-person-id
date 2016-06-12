@@ -48,7 +48,7 @@
 		<maven.build.timestamp.format>yyyy-MM-dd HH:mm</maven.build.timestamp.format>
 
 		<lib.assertj.version>3.4.1</lib.assertj.version>
-		<lib.coveralls.version>4.1.0</lib.coveralls.version>
+		<lib.coveralls.version>4.2.0</lib.coveralls.version>
 
 		<versioneye.api_key>SECURE</versioneye.api_key>
 		<versioneye.projectid>VALUE</versioneye.projectid>
