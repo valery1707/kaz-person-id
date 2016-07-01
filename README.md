@@ -8,6 +8,7 @@ kaz-person-id
 [![Build Status](https://drone.io/github.com/valery1707/kaz-person-id/status.png)](https://drone.io/github.com/valery1707/kaz-person-id/latest)
 [![Build status](https://app.wercker.com/status/71759fb870e88774218bf0c4df4a801e/s/master)](https://app.wercker.com/project/bykey/71759fb870e88774218bf0c4df4a801e)
 [![Build Status](https://snap-ci.com/valery1707/kaz-person-id/branch/master/build_image)](https://snap-ci.com/valery1707/kaz-person-id/branch/master)
+[![Build Status](https://semaphoreci.com/api/v1/valery1707/kaz-person-id/branches/master/badge.svg)](https://semaphoreci.com/valery1707/kaz-person-id)
 
 [![Coverage Status](https://coveralls.io/repos/valery1707/kaz-person-id/badge.svg)](https://coveralls.io/r/valery1707/kaz-person-id)
 [![codecov.io](https://codecov.io/github/valery1707/kaz-person-id/coverage.svg?branch=master)](https://codecov.io/github/valery1707/kaz-person-id)
